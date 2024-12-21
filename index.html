@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Preety 💖</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7e1e1;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .heart {
+      position: fixed;
+      color: #c01f6f;
+      font-size: 30px;
+      pointer-events: none;
+      z-index: 1000;
+      animation: moveUp 10s linear;
+    }
+
+    @keyframes moveUp {
+      0% {
+        transform: translateY(1vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-200vh);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .message-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .message-box h2 {
+      color: #ff4d88;
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .message-box p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      text-align: left;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* Mobile Specific Styles */
+    @media screen and (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+
+      .message-box {
+        padding: 15px;
+        margin: 10px;
+        width: calc(100% - 20px);
+      }
+
+      .message-box h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .message-box p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message-box">
+      <h2>Hey Preety💖</h2>
+      <p>We met just two days ago, and honestly, I never imagined it would make me think about you this much. I find myself checking WhatsApp constantly to see if you've messaged me. And when you leave me on read, it gives me this little urge to say something that might spark a cute conversation between us. Last night, I was so tired, but still, I really wanted to talk to you. I don't even know where I found the courage to say something that I probably shouldn't have said.
+
+While looking at your profile picture, my phone fell on my face twice, waking me up both times. It made me stay up for another five minutes, just looking at your picture. This morning, I woke up to find my phone under the blanket, turned off, and I wondered if I had left it open the whole night.
+
+I'm truly sorry for what I said. The timing and the way I said it made it sound so wrong. We're still strangers, just getting to know each other, and I said something without even saying it face to face. It didn't come across as a compliment, and for that, I apologize.
+
+I also want you to know that I think you're a really strong person. You face everything with such boldness, and when you said you don't have the right to shout at anyone, that didn't sit right with me. It might seem like I'm just buttering you up, but I promise that's not the case. I just wanted to make you smile. When you asked, "Is something wrong with you?" I felt like maybe it made you smile, even just a little.
+
+I've only known you for two days, but I already look forward to talking to you. There's something truly special about you, and I can't wait to get to know you better.</p>
+    </div>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.classList.add('heart');
+      
+      // Random horizontal position
+      const left = Math.random() * window.innerWidth;
+      heart.style.left = left + 'px';
+      
+      document.body.appendChild(heart);
+      
+      // Remove the heart after animation completes
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    // Create hearts immediately
+    setInterval(createHeart, 100);
+
+    // Create some hearts immediately on load
+    for(let i = 0; i < 10; i++) {
+      createHeart();
+    }
+  </script>
+</body>
+</html>
